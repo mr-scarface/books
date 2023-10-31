@@ -16,6 +16,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build Server Docker Image
-        run: docker build -t books/server .
+        run: docker build -t akshaysdev/books .
       - name: Publish Image to Docker Hub
         run: docker push book/server:latest
