@@ -18,4 +18,4 @@ jobs:
       - name: Build Server Docker Image
         run: docker build -t akshaysdev/books .
       - name: Publish Image to Docker Hub
-        run: docker push book/server:latest
+        run: docker push akshaysdev/books:latest
