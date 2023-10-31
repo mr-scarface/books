@@ -2,8 +2,13 @@
 
 #### 1. Get all books
 
+Local
 ```http
   GET http://127.0.0.1:8080/v1/book/
+```
+Deployed
+```http
+  GET https://akshaysdev-books.onrender.com/v1/book/
 ```
 
 | Query | Type     | Description                       |
@@ -13,10 +18,14 @@
 
  #### 2. Create a book
 
+Local
 ```http
   POST http://127.0.0.1:8080/v1/book/
 ```
-
+Deployed
+```http
+  POST https://akshaysdev-books.onrender.com/v1/book/
+```
 | Body      | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `title`      | `string` | **Required**. Title must be unique |
@@ -25,8 +34,13 @@
 
  #### 3. Get a book
 
+Local
 ```http
-  GET http://127.0.0.1:8080/v1/book/6540e4e4ee808157d5a93f2a
+  GET http://127.0.0.1:8080/v1/book/<id>
+```
+Deployed
+```http
+  GET https://akshaysdev-books.onrender.com/v1/book/<id>
 ```
 
 | Parameter      | Type     | Description                       |
@@ -35,8 +49,13 @@
 
  #### 4. Update a book
 
+Local
 ```http
-  PATCH http://127.0.0.1:8080/v1/book/6540e4e4ee808157d5a93f2a
+  PATCH http://127.0.0.1:8080/v1/book/<id>
+```
+Deployed
+```http
+  PATCH https://akshaysdev-books.onrender.com/v1/book/<id>
 ```
 
 | Parameter      | Type     | Description                       |
@@ -53,10 +72,14 @@
 
  #### 5. Delete a book
 
+Local
 ```http
-  DELETE http://127.0.0.1:8080/v1/book/6540e4e4ee808157d5a93f2a
+  DELETE http://127.0.0.1:8080/v1/book/<id>
 ```
-
+Deployed
+```http
+  DELETE https://akshaysdev-books.onrender.com/v1/book/<id>
+```
 | Parameter      | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Unique id of the book|
