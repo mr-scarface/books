@@ -44,7 +44,10 @@ module.exports = {
 
   viewAll: async (req, res) => {
     try {
-      const response = await bookService.viewAll(req.body);
+      const { pageNumber = 1, limit = 10 } = req.query;
+      const query = { pageNumber: +pageNumber, limit: +limit };
+
+      const response = await bookService.viewAll(query);
 
       res.status(200).send({ success: true, ...response });
     } catch (error) {

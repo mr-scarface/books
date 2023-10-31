@@ -27,6 +27,9 @@ module.exports = class BookModel {
 
       return book;
     } catch (error) {
+      if (error.code === 11000) {
+        throw createError(409, 'Title already exists', { meta: { updateObject } });
+      }
       error.meta = { ...error.meta, 'BookModel.update': { bookId, updateObject } };
       throw error;
     }
@@ -54,7 +57,7 @@ module.exports = class BookModel {
     }
   }
 
-  async viewAll({ pageNumber = 1, limit = 10 }) {
+  async viewAll({ pageNumber, limit }) {
     try {
       const query = fetchBooksQuery({ pageNumber, limit });
 
