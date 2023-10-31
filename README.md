@@ -1,29 +1,65 @@
 # APIs
 
-1. To get all the available books; send the 'pageNumber' and 'limit' as a query parameter. If not sent, the default will be, pageNumber = 1 & limit = 10.
-```bash
-GET http://127.0.0.1:8080/v1/book/
+#### 1. Get all books
+
+```http
+  GET http://127.0.0.1:8080/v1/book/
 ```
 
-2. To create a book; send the 'title', 'author', and 'summary' in the body of the request. 'title' should be unique.
-```bash
-POST http://127.0.0.1:8080/v1/book/
+| Query | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `pageNumber`      | `number` | **Default** is *1* |
+| `limit`      | `number` | **Default** is *10* |
+
+ #### 2. Create a book
+
+```http
+  POST http://127.0.0.1:8080/v1/book/
 ```
 
-3. To get / read a book, send the 'id' of the book as a parameter in the request.
-```bash
-GET http://127.0.0.1:8080/v1/book/6540e4e4ee808157d5a93f2a
+| Body      | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `title`      | `string` | **Required**. Title must be unique |
+| `author`      | `string` | **Required**. Author's name|
+| `summary`      | `string` | **Required**. Summary of the book|
+
+ #### 3. Get a book
+
+```http
+  GET http://127.0.0.1:8080/v1/book/6540e4e4ee808157d5a93f2a
 ```
 
-4. To update a book, send the 'id' of the book as a parameter in the request along with the update object in the body. If the 'title' is getting updated make sure its unique. 
-```bash
-PATCH http://127.0.0.1:8080/v1/book/6540e4e4ee808157d5a93f2a
+| Parameter      | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Unique id of the book|
+
+ #### 4. Update a book
+
+```http
+  PATCH http://127.0.0.1:8080/v1/book/6540e4e4ee808157d5a93f2a
 ```
 
-5. To delete a book, send the 'id' of the book as a parameter in the request.
-```bash
-DELETE http://127.0.0.1:8080/v1/book/6540e4e4ee808157d5a93f2a
+| Parameter      | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Unique id of the book|
+
+##### Any one or all of the following
+
+| Body      | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `title`      | `string` | **Required**. Title must be unique |
+| `author`      | `string` | **Required**. Author's name|
+| `summary`      | `string` | **Required**. Summary of the book|
+
+ #### 5. Delete a book
+
+```http
+  DELETE http://127.0.0.1:8080/v1/book/6540e4e4ee808157d5a93f2a
 ```
+
+| Parameter      | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Unique id of the book|
 
 # Instructions to run the server locally
 
